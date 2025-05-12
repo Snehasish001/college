@@ -1,0 +1,635 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #ef4444;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bike-details-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Back button styles */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: none;
+  color: #4b5563;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+
+.back-button:hover {
+  color: #ef4444;
+}
+
+.bike-details-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.image-gallery {
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+/* Add these styles to your existing BikeDetails.css file */
+
+/* Image slider styles */
+.slider-container {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s;
+}
+
+.slider-arrow:hover {
+  background-color: rgba(239, 68, 68, 0.8);
+}
+
+.slider-arrow.prev {
+  left: 10px;
+}
+
+.slider-arrow.next {
+  right: 10px;
+}
+
+.slider-indicator {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-image.placeholder {
+  background-color: #f3f4f6;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thumbnail-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thumbnail-container::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 20px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px #ef4444;
+}
+
+/* Tab navigation styles */
+.tab-navigation {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 2rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-button {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  color: #ef4444;
+}
+
+.tab-button.active {
+  color: #1f2937;
+  border-bottom-color: #ef4444;
+}
+
+/* Specifications section styles */
+.specs-section {
+  margin-bottom: 3rem;
+}
+
+.engine-performance,
+.transmission-chassis,
+.brakes-wheels,
+.dimensions {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.spec-row:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.spec-key {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.spec-value {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .bike-details-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-gallery, .bike-info-section {
+    grid-column: 1;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .bike-details-container {
+    padding: 1rem;
+  }
+  
+  .bike-meta-info {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .bike-name {
+    font-size: 1.5rem;
+  }
+  
+  .bike-price {
+    font-size: 1.5rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .slider-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bike-name {
+    font-size: 1.3rem;
+  }
+  
+  .bike-price {
+    font-size: 1.3rem;
+  }
+  
+  .tab-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.1rem;
+  }
+  
+  .spec-row {
+    padding: 0.75rem 1rem;
+  }
+  
+  .spec-key, .spec-value {
+    font-size: 0.85rem;
+  }
+}
+
+.bike-info-section {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.quick-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spec-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.spec-value {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.bike-main-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bike-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.trending-badge {
+  background: #ef4444;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.bike-price {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ef4444;
+  margin: 0;
+}
+
+.bike-meta-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.meta-value {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.overview-section {
+  margin-bottom: 1.5rem;
+}
+
+.specs-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 2rem 0 1.5rem;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.spec-row:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.spec-key {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.spec-value {
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.overview-section {
+  margin: 2rem 0;
+}
+
+.overview-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.overview-section p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.contact-dealer {
+  display: block;
+  width: 100%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contact-dealer:hover {
+  background: #dc2626;
+}
+
+.tab-navigation {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.tab-button.active {
+  color: #1f2937;
+  border-bottom-color: #ef4444;
+}
+
+.engine-performance, .transmission-chassis, .brakes-wheels, .features {
+  margin-top: 2rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-title svg {
+  margin-right: 0.75rem;
+  color: #ef4444;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.error {
+  color: #ef4444;
+}
+
+@media (max-width: 1024px) {
+  .bike-details-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-gallery, .bike-info-section {
+    grid-column: 1;
+  }
+  
+  .bike-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .bike-price {
+    margin-top: 1rem;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .bike-details-container {
+    padding: 1rem;
+  }
+  
+  .bike-meta-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .bike-name {
+    font-size: 1.5rem;
+  }
+  
+  .bike-price {
+    font-size: 1.5rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+  
