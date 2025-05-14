@@ -1,6 +1,6 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
-const API_KEY = 'ab25d9fbe2728f0530d5365afb8de1f935bcd84cf24044f8c5d5432d7e400d94';
+const API_KEY = '9f695216ee90ffc4067b0834cc66c52540f24bb6f2666884ad424edebec34f8b';
 
 export const getData = async (endpoint) => {
   try {
