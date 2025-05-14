@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .btn-admin {
+      background-color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .btn-admin:hover {
+      background-color: #0056b3;
+    }
+    main {
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Website Documentation</h1>
+    <a href="/admin/" class="btn-admin">Admin Login</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <p>This website is designed to provide users with motorcycle specifications, comparisons, and news on new launches. Admins can manage data via the admin portal.</p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Browse bikes by brand and specs</li>
+        <li>Compare two or more motorcycles</li>
+        <li>Latest bike news and updates</li>
+        <li>Admin control panel for data management</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <ul>
+        <li>Backend: Django / Django Rest Framework</li>
+        <li>Database: MySQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How to Use</h2>
+      <p>Users can browse bike models and details without logging in. Admins can click the Admin Login button above to access the admin panel using their credentials.</p>
+    </section>
+  </main>
+</body>
+</html>
