@@ -20,7 +20,7 @@ def api_key_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
-@ratelimit(key='ip', rate='10/s', block=True)
+@ratelimit(key='ip', rate='100/h', block=True)
 @api_view(['GET'])
 def get_bikes(request, id = None):
     if request.method != 'GET':
