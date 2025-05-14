@@ -5,6 +5,7 @@ from .models import Bike, APIKey
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
+from ratelimit.decorators import ratelimit
 
 def api_key_required(view_func):
     def wrapper(request, *args, **kwargs):
@@ -19,9 +20,8 @@ def api_key_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
-@csrf_exempt
+
 @api_view(['GET'])
-@api_key_required
 def get_bikes(request, id = None):
     if request.method != 'GET':
         return JsonResponse({"message": "Method not allowed"}, status=405)
