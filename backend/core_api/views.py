@@ -5,7 +5,7 @@ from .models import Bike, APIKey
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
-from ratelimit.decorators import ratelimit
+from ratelimit import limits, sleep_and_retry
 
 def api_key_required(view_func):
     def wrapper(request, *args, **kwargs):
@@ -20,7 +20,8 @@ def api_key_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
-@ratelimit(key='ip', rate='100/h', block=True)
+@sleep_and_retry
+@limits(calls=10, period=1)
 @api_view(['GET'])
 def get_bikes(request, id = None):
     if request.method != 'GET':
