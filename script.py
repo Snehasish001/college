@@ -4,10 +4,10 @@ import requests
 import re
 
 # === CONFIGURATION ===
-EXCEL_FILE = "bikes_cleaned.xlsx"
+EXCEL_FILE = "dataset.xlsx"
 IMAGE_FOLDER_ROOT = "bike_image_folder"  # Ensure this exists
-API_URL = "http://localhost:8000/api/post-bike/"  # Update if necessary
-API_KEY = "ab25d9fbe2728f0530d5365afb8de1f935bcd84cf24044f8c5d5432d7e400d94"  # Replace with your actual API key
+API_URL = "https://snehasish001.pythonanywhere.com/api/post-bike/"  # Update if necessary
+API_KEY = "9f695216ee90ffc4067b0834cc66c52540f24bb6f2666884ad424edebec34f8b"  # Replace with your actual API key
 headers = {
     "Authorization": f"ApiKey {API_KEY}"  # Adjust to match the format expected by your backend
 }

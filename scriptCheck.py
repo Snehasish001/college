@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # === CONFIGURATION ===
-EXCEL_FILE = "bikes.xlsx"  # your dataset
+EXCEL_FILE = "dataset.xlsx"  # your dataset
 IMAGE_FOLDER_ROOT = "bike_image_folder"  # your image folders
 
 # === REQUIRED CHAR FIELDS (must be non-empty) ===
@@ -31,9 +31,13 @@ available_folders = {
 missing_folder = []
 missing_fields = []
 
+l = list()
+
 for index, row in df.iterrows():
     bike_name = str(row.get('name', '')).strip()
     bike_folder_key = bike_name.lower()
+
+    l.append(bike_name)
 
     # Check folder
     if bike_folder_key not in available_folders:
@@ -55,3 +59,21 @@ for bike in missing_folder:
 print(f"\nTotal bikes: {len(df)}")
 print(f"Bikes with missing folders: {len(missing_folder)}")
 print(f"Bikes with missing fields: {len(missing_fields)}")
+
+l.sort()
+j = 1
+for i in l:
+    print(f"{j} - {i}")
+    j += 1
+
+def find_duplicates(lst):
+    seen = set()
+    duplicates = set()
+    for item in lst:
+        if item in seen:
+            duplicates.add(item)
+        else:
+            seen.add(item)
+    return list(duplicates)
+
+print(find_duplicates(l))
