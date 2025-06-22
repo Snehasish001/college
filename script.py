@@ -4,8 +4,8 @@ import requests
 import re
 
 # === CONFIGURATION ===
-EXCEL_FILE = "dataset.xlsx"
-IMAGE_FOLDER_ROOT = "bike_image_folder"  # Ensure this exists
+EXCEL_FILE = "newData.xlsx"
+IMAGE_FOLDER_ROOT = "BikesImagesNew"  # Ensure this exists
 API_URL = "https://snehasish001.pythonanywhere.com/api/post-bike/"  # Update if necessary
 API_KEY = "9f695216ee90ffc4067b0834cc66c52540f24bb6f2666884ad424edebec34f8b"  # Replace with your actual API key
 headers = {

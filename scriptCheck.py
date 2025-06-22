@@ -2,8 +2,8 @@ import pandas as pd
 import os
 
 # === CONFIGURATION ===
-EXCEL_FILE = "dataset.xlsx"  # your dataset
-IMAGE_FOLDER_ROOT = "bike_image_folder"  # your image folders
+EXCEL_FILE = "newData.xlsx"  # your dataset
+IMAGE_FOLDER_ROOT = "BikesImagesNew"  # your image folders
 
 # === REQUIRED CHAR FIELDS (must be non-empty) ===
 required_char_fields = [

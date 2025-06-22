@@ -2,8 +2,8 @@ import os
 import pandas as pd
 
 # === CONFIGURATION ===
-EXCEL_FILE = "dataset.xlsx"
-IMAGE_FOLDER_ROOT = "bike_image_folder"  # folder where all bike folders are present
+EXCEL_FILE = "newData.xlsx"
+IMAGE_FOLDER_ROOT = "BikesImagesNew"  # folder where all bike folders are present
 
 # === LOAD DATA ===
 df = pd.read_excel(EXCEL_FILE)
